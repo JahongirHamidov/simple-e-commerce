@@ -78,6 +78,7 @@ export function MyCart() {
 
     let rows = [] 
     let overall =  {price:0, discount:0, totalPrice:0}
+    const [price, setPrice]= React.useState(0)
     return (
     <div className={classes.division}>
         <Card className={classes.card}>
@@ -86,7 +87,6 @@ export function MyCart() {
                     selectedProducts ? selectedProducts.map( item => {
                         rows.push(createData( item.name, item.price, amount , (item.price*item.amount)))
                     }) : <Typography>No product</Typography>
-                    
             }
             </Typography>
             <Table className={classes.table} aria-label="customized table">
@@ -126,6 +126,7 @@ export function MyCart() {
             <Typography component='h3' variant='h6' >{`Discount: ${overall.discount}$`}</Typography>
             <Typography component='h3' variant='h6' >{`Total price: ${ overall.totalPrice }$`}</Typography>
             <Button variant='contained' color='secondary' className={classes.button}>Shop Now</Button>
+            
 
         </Card>
     </div>

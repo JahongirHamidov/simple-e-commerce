@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography'
 import {Link} from 'react-router-dom'
 import {GlobalState} from '../../globalState'
 import Snackbar from '@material-ui/core/Snackbar'
+import Rating from '@material-ui/lab/Rating'
+import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles({
   root: {
@@ -32,18 +34,20 @@ export function MyCard(props) {
   const classes = useStyles()
   const {setNumberProducts, numberProducts, selectedProducts, setSelectedProducts, arr, setArr } = React.useContext(GlobalState)
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleClick = () => {
-    setOpen(true);
+    setOpen(true)
   }
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
-      return;
+      return
     }
-    setOpen(false);
-  };
+    setOpen(false)
+  }
   
+  const [value, setValue] = React.useState(props.state.rating)
+
   return (
   <>  
     <Card className={classes.root} elevation={3}>
@@ -53,6 +57,16 @@ export function MyCard(props) {
           image={props.state.img}
           title="Contemplative Reptile"
         />
+        <Link to='/'>
+          <Box component="fieldset" mt={1} mb={-2} borderColor="transparent">
+            <Rating 
+              value={value}
+              name="simple-controlled"
+              onChange={(event, newValue) => {setValue(newValue)}}
+              />
+          </Box>
+        </Link>
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.state.name}

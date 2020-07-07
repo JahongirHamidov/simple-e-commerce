@@ -123,7 +123,7 @@ export function MyAppBar() {
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>
                         
-                        <Link to='/basket' className={classes.link}>
+                        <Link to='/myCart' className={classes.link}>
                             <IconButton aria-label="show 4 new mails" color="inherit" >
                             <Badge badgeContent={numberProducts} color="secondary">
                                 <ShoppingCartIcon />
