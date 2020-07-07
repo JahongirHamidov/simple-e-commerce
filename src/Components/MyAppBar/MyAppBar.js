@@ -72,22 +72,23 @@ export function MyAppBar() {
                     onClose={handleMobileMenuClose}
                     >
 
-                    <Link to='/basket' className={classes.link}>
+                    <Link to='/myCart' className={classes.link}>
                         <MenuItem>
-                            <IconButton aria-label="show 11 new notifications" color="inherit">
-                            <Badge badgeContent={numberProducts} color="secondary">
-                                <ShoppingCartIcon />
-                            </Badge>
+                            <IconButton color="inherit" onClick={()=>handleMobileMenuClose()}>
+                                <Badge badgeContent={numberProducts} color="secondary">
+                                    <ShoppingCartIcon />
+                                </Badge>
                             </IconButton>
                             <p>My Cart</p>
                         </MenuItem>
                     </Link>
                     <MenuItem onClick={handleProfileMenuOpen}>
                         <IconButton
-                        aria-label="account of current user"
-                        aria-controls="primary-search-account-menu"
-                        aria-haspopup="true"
-                        color="inherit"
+                            aria-label="account of current user"
+                            aria-controls="primary-search-account-menu"
+                            aria-haspopup="true"
+                            color="inherit"
+                            onClick={()=>handleMobileMenuClose()}
                         >
                         <AccountCircle />
                         </IconButton>

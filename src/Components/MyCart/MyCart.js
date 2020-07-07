@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     },
     card: {
         maxWidth: 750,
-        margin: '5%'
+        margin: '5%',
     },
     smallCard: {
         minWidth: 300,
@@ -61,11 +61,11 @@ const useStyles = makeStyles({
         color: 'grey',
         margin: '2%',
         fontFamily: 'Century Gothic',      
-        
-    }
+    },
+
 })
 
-export function Basket() {
+export function MyCart() {
     
     const classes = useStyles()
     const { selectedProducts, setSelectedProducts, arr } = React.useContext(GlobalState)
@@ -81,7 +81,7 @@ export function Basket() {
     return (
     <div className={classes.division}>
         <Card className={classes.card}>
-            <Typography variant='h4' component='h4' className={classes.basket} align='center'>My Basket:
+            <Typography variant='h4' component='h4' className={classes.basket} align='center'>My Cart:
             {   
                     selectedProducts ? selectedProducts.map( item => {
                         rows.push(createData( item.name, item.price, amount , (item.price*item.amount)))
@@ -92,7 +92,7 @@ export function Basket() {
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell>Name</StyledTableCell>
+                        <StyledTableCell >Name</StyledTableCell>
                         <StyledTableCell align="right">Price</StyledTableCell>
                         <StyledTableCell align="right">Amount</StyledTableCell>
                         <StyledTableCell align="right">Total price</StyledTableCell>

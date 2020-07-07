@@ -5,7 +5,8 @@ export const useMyAppBarStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     appbar: {
-        backgroundColor: '#32a87f'
+        backgroundColor: '#eeeeee',
+        color: 'grey',
     },
     cardList: {
         display: 'flex',

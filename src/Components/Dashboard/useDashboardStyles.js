@@ -5,6 +5,7 @@ export const useDashboardStyles = makeStyles((theme) => ({
     cardList: {
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'center',
     },
     link: {
         textDecoration: 'none',

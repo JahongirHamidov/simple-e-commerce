@@ -37,6 +37,12 @@ export function MyCard(props) {
   const handleClick = () => {
     setOpen(true);
   }
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
   
   return (
   <>  
@@ -81,15 +87,18 @@ export function MyCard(props) {
         </Button>
       </CardActions>
     </Card>
-    <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        open={open}
-        autoHideDuration={1000}
-        message={`${props.state.name} added`}         
+    <Link to='/myCart'>
+      <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          open={open}
+          autoHideDuration={1500}
+          message={`${props.state.name} added`}  
+          onClose={handleClose}       
       />
+    </Link>
   </>
   )
 }

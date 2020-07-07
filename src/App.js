@@ -1,7 +1,7 @@
 import React from 'react'
 import {Dashboard} from './Components/Dashboard/Dashboard'
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
-import {Basket} from './Components/Basket/Basket'
+import {MyCart} from './Components/MyCart/MyCart'
 import {InfoCard} from './Components/InfoCard/InfoCard'
 import {AddCard} from './Components/AddCard/AddCard'
 import {MyAppBar} from './Components/MyAppBar/MyAppBar'
@@ -21,8 +21,8 @@ export default function App() {
           <Route path='/addCard'>
             <AddCard />
           </Route>
-          <Route path='/basket'>
-            <Basket />
+          <Route path='/myCart'>
+            <MyCart />
           </Route>
           <Route path='/cardInfo'>
             <InfoCard />

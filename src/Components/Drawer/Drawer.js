@@ -58,21 +58,27 @@ export function MyDrawer() {
       <Typography className={classes.choose}>E-commerse</Typography>
       <Divider />
       <List>
-        <ListItem button>
-          <ListItemIcon><StorefrontIcon/></ListItemIcon>
-          <Link to='/'  className={classes.menu}>Products</Link>
-          <Divider/>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon><ShoppingCartIcon/></ListItemIcon>
-          <Link to='/basket' className={classes.menu}>Basket</Link>
-          <Divider/>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon><AccountCircleIcon/></ListItemIcon>
-          <Link to='/addCard' className={classes.menu}>Profile</Link>
-          <Divider/>
-        </ListItem>
+        <Link to='/'  className={classes.menu}>
+          <ListItem button>
+            <ListItemIcon><StorefrontIcon/></ListItemIcon>
+              Products
+            <Divider/>
+          </ListItem>
+        </Link>
+        <Link to='/myCart' className={classes.menu}>
+          <ListItem button>
+            <ListItemIcon><ShoppingCartIcon/></ListItemIcon>
+              Cart
+            <Divider/>
+          </ListItem>
+        </Link>
+        <Link to='/addCard' className={classes.menu}>
+          <ListItem button>
+            <ListItemIcon><AccountCircleIcon/></ListItemIcon>
+              Profile
+            <Divider/>
+          </ListItem>
+        </Link>
       </List>
 
       
