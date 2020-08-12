@@ -16,6 +16,7 @@ import {Link} from 'react-router-dom'
 import {useMyAppBarStyles} from './useMyAppBarStyles'
 import { MyDrawer } from '../Drawer/Drawer'
 import {GlobalState} from '../../globalState'
+import Button from '@material-ui/core/Button'
 
 export function MyAppBar() {
     const classes = useMyAppBarStyles()
@@ -104,13 +105,15 @@ export function MyAppBar() {
                 <AppBar position="static" className={classes.appbar}>
                     <Toolbar>
                         <MyDrawer/>
-                        <Typography className={classes.title} variant="h6" noWrap>
-                            E-Commmerse
-                        </Typography>
+                        <Link to='/'>
+                            <Typography className={classes.title} variant="h6" noWrap>
+                                <img     
+                                    className={classes.amazon_logo}
+                                    src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
+                                />
+                            </Typography>
+                        </Link>
                         <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                            <SearchIcon />
-                            </div>
                             <InputBase
                             placeholder="Search…"
                             classes={{
@@ -119,6 +122,11 @@ export function MyAppBar() {
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                             />
+                        </div>
+                        <div>
+                            <Button className={classes.searchIcon} variant='contained'>
+                                <SearchIcon />
+                            </Button>
                         </div>
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>

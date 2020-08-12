@@ -4,8 +4,12 @@ export const useMyAppBarStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
     },
+    amazon_logo: {
+        width: 100,
+        paddingTop: 20
+    },
     appbar: {
-        backgroundColor: '#eeeeee',
+        backgroundColor: '#131A22',
         color: 'grey',
     },
     cardList: {
@@ -28,11 +32,10 @@ export const useMyAppBarStyles = makeStyles((theme) => ({
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
+        backgroundColor: fade(theme.palette.common.white, 1),
+        '&:visited': {
+        border: '1px solid orange',
         },
-        marginRight: theme.spacing(2),
         marginLeft: 0,
         width: '100%',
         [theme.breakpoints.up('sm')]: {
@@ -41,16 +44,17 @@ export const useMyAppBarStyles = makeStyles((theme) => ({
         },
     },
     searchIcon: {
-        padding: theme.spacing(0, 2),
         height: '100%',
-        position: 'absolute',
+        color:'black',
+        position: '',
         pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'orange'
     },
     inputRoot: {
-        color: 'inherit',
+        color: 'black',
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
@@ -58,7 +62,7 @@ export const useMyAppBarStyles = makeStyles((theme) => ({
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('md')]: {
-        width: '20ch',
+        width: '80ch',
         },
     },
     sectionDesktop: {

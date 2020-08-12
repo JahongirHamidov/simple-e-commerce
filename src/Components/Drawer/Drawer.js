@@ -22,13 +22,18 @@ const useStyles = makeStyles({
     width: 'auto',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
   },
   choose: {
-    margin: '30px',
-    color: '#098388',
-    fontSize: '25px'
+    padding: '30px',
+    color: '#ffffff',
+    fontSize: '25px',
+    backgroundColor: '#131A22'
   },
   menu: {
     textDecoration: 'none',
     color: 'inherit'
+  },
+  menuIcon: {
+    border: '1px solid white',
+    marginRight: 20
   }
 })
 
@@ -55,7 +60,7 @@ export function MyDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Typography className={classes.choose}>E-commerse</Typography>
+      <Typography className={classes.choose}><AccountCircleIcon />  Hello, Sign in</Typography>
       <Divider />
       <List>
         <Link to='/'  className={classes.menu}>
@@ -89,7 +94,7 @@ export function MyDrawer() {
     <div>
         {['left'].map((anchor) => (
             <React.Fragment key={anchor}>
-                <Button onClick={toggleDrawer(anchor, true)} color='inherit'>{
+                <Button onClick={toggleDrawer(anchor, true)} color='inherit' className={classes.menuIcon}>{
                     <MenuIcon/>
                 }</Button>
                 <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
