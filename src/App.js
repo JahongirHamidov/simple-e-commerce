@@ -6,6 +6,7 @@ import {InfoCard} from './Components/InfoCard/InfoCard'
 import {AddCard} from './Components/AddCard/AddCard'
 import {MyAppBar} from './Components/MyAppBar/MyAppBar'
 import {Provider} from './globalState'
+import { Search } from './Components/Search/Search'
 
 export default function App() {
 
@@ -26,6 +27,9 @@ export default function App() {
           </Route>
           <Route path='/cardInfo'>
             <InfoCard />
+          </Route>
+          <Route path='/search'>
+            <Search />
           </Route>
       </Switch>
     </BrowserRouter>

@@ -18,6 +18,7 @@ import { MyDrawer } from '../Drawer/Drawer'
 import {GlobalState} from '../../globalState'
 import Button from '@material-ui/core/Button'
 
+
 export function MyAppBar() {
     const classes = useMyAppBarStyles()
     const {numberProducts, setNumberProducts} = React.useContext(GlobalState)
@@ -27,7 +28,10 @@ export function MyAppBar() {
 
             const isMenuOpen = Boolean(anchorEl)
             const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
-
+            const {value,setValue} = React.useContext(GlobalState)            
+            const newValue = e => {
+                setValue(e.target.value)
+            }
             const handleProfileMenuOpen = (event) => {
                 setAnchorEl(event.currentTarget)
             }
@@ -115,18 +119,29 @@ export function MyAppBar() {
                         </Link>
                         <div className={classes.search}>
                             <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
+                                placeholder="Search…"
+                                classes={{
+                                    root: classes.inputRoot,
+                                    input: classes.inputInput,
+                                }}
+                                inputProps={{ 'aria-label': 'search' }}
+                                value={value}
+                                onChange={newValue}
                             />
                         </div>
                         <div>
-                            <Button className={classes.searchIcon} variant='contained'>
-                                <SearchIcon />
-                            </Button>
+                        { value.length > 0 ? (    
+                            <Link to='/search'>
+                                <Button className={classes.searchIcon} variant='contained'>
+                                    <SearchIcon/>
+                                </Button>
+                            </Link> ) : 
+                            (<Link to='/'>
+                                <Button className={classes.searchIcon} variant='contained'>
+                                    <SearchIcon/>
+                                </Button>    
+                            </Link>)
+                        }   
                         </div>
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>

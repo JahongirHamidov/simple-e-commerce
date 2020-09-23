@@ -47,7 +47,7 @@ export function MyCard(props) {
   }
   
   const [value, setValue] = React.useState(props.state.rating)
-
+  console.log(props.state.name);
   return (
   <>  
     <Card className={classes.root} elevation={3}>
