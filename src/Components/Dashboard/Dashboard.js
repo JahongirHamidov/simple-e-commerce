@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {useDashboardStyles} from './useDashboardStyles'
 import {data} from '../../data'
 import {GlobalState} from '../../globalState'
+import {Ad} from '../Ad/Ad'
 
 export function Dashboard() {
     const classes = useDashboardStyles()
@@ -12,6 +13,7 @@ export function Dashboard() {
     
     return (
         <>
+            
             <Container fixed className={classes.cardList}>
                 {
                     data.products.map( (user) => (
