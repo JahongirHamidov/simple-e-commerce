@@ -12,8 +12,8 @@ export function Dashboard() {
   
     
     return (
-        <>
-            
+        <div className={classes.bgcolor}>
+            <Ad />
             <Container fixed className={classes.cardList}>
                 {
                     data.products.map( (user) => (
@@ -25,6 +25,6 @@ export function Dashboard() {
                 }
             </Container>
             
-        </>
+        </div>
     )
 }
